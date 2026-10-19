@@ -1,0 +1,271 @@
+/* 
+   Retro Engineering Theme
+   Inspired by Gruvbox and old terminal interfaces.
+   Target Audience: Computer Engineering Students.
+*/
+
+:root {
+    /* Color Palette - Gruvbox Dark Inspired */
+    --bg-color: #282828;       /* Dark Grey Background */
+    --fg-color: #ebdbb2;       /* Cream Foreground */
+    --fg-dim: #a89984;         /* Dimmed Foreground */
+    
+    --accent-red: #cc241d;
+    --accent-green: #98971a;
+    --accent-yellow: #d79921;
+    --accent-blue: #458588;
+    --accent-purple: #b16286;
+    --accent-aqua: #689d6a;
+    
+    --terminal-bg: #1d2021;    /* Darker block background */
+    --border-color: #504945;
+    
+    /* Typography */
+    --font-mono: 'JetBrainsMono Nerd Font Mono', 'JetBrainsMono', 'JetBrains Mono', 'Courier New', Courier, 'Lucida Console', Monaco, monospace;
+    --font-base: var(--font-mono); /* Stick to mono for the engineering feel */
+    
+    /* Spacing */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    
+    /* Layout */
+    --max-width: 800px;
+}
+
+/* Base / Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+    font-family: var(--font-base);
+    line-height: 1.6;
+    font-size: 16px;
+    padding: var(--spacing-md);
+}
+
+a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--accent-yellow);
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Hidden visually, still read by screen readers */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* Layout Container */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding-top: var(--spacing-lg);
+}
+
+/* Header & Logo */
+.site-header {
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: var(--spacing-md);
+}
+
+.logo pre {
+    color: var(--accent-green);
+    font-weight: bold;
+    font-size: 10px; /* Small ASCII art */
+    line-height: 1.2;
+    overflow-x: hidden;
+}
+
+@media (min-width: 600px) {
+    .logo pre {
+        font-size: 14px;
+    }
+}
+
+/* Navigation */
+.nav-list {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.nav-list li a {
+    color: var(--fg-dim);
+    font-weight: bold;
+}
+
+.nav-list li a:hover,
+.nav-list li a.active {
+    color: var(--accent-yellow);
+}
+
+.nav-list li a::before {
+    content: "[ ";
+    color: var(--border-color);
+    transition: color 0.2s;
+}
+
+.nav-list li a::after {
+    content: " ]";
+    color: var(--border-color);
+    transition: color 0.2s;
+}
+
+.nav-list li a:hover::before,
+.nav-list li a:hover::after {
+    color: var(--accent-yellow);
+}
+
+/* Sections */
+.section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.section-title {
+    color: var(--accent-red);
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-md);
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: var(--spacing-sm);
+}
+
+/* Terminal Block (About) */
+.terminal-block {
+    background-color: var(--terminal-bg);
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-md);
+    color: var(--fg-color);
+    position: relative;
+}
+
+.terminal-block::before {
+    content: "guest@web:~$ cat intro.txt";
+    display: block;
+    font-size: 0.8rem;
+    color: var(--accent-aqua);
+    margin-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: var(--spacing-sm);
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+}
+
+@media (min-width: 600px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.project-card {
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-md);
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.project-card .dates {
+    font-size: 0.85rem;
+    color: var(--accent-yellow);
+}
+
+.project-card .org  {
+    font-size: 1.25rem;
+    color: var(--accent-aqua);
+}
+
+.project-card:hover {
+    border-color: var(--accent-green);
+    transform: translateY(-2px);
+}
+
+.project-card h3 {
+    color: var(--accent-yellow);
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-card .meta {
+    font-size: 0.85rem;
+    color: var(--accent-purple);
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    color: var(--fg-dim);
+    margin-bottom: var(--spacing-md);
+}
+
+.project-card a {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Log List */
+.log-list li {
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 600px) {
+    .log-list li {
+        flex-direction: row;
+        align-items: baseline;
+    }
+}
+
+.log-list .date {
+    color: var(--accent-aqua);
+    min-width: 120px;
+    font-size: 0.9rem;
+}
+
+/* Footer */
+.site-footer {
+    margin-top: 4rem;
+    text-align: center;
+    color: var(--fg-dim);
+    font-size: 0.9rem;
+}
+
+.site-footer hr {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.copyright {
+    margin-top: var(--spacing-md);
+    opacity: 0.7;
+}
+
+/* Selection */
+::selection {
+    background: var(--accent-yellow);
+    color: var(--bg-color);
+}

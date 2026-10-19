@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>~aolgeirson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;display=swap">
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="~aolgeirson">
+</head>
+<body>
+
+    <div class="container">
+        <header class="site-header">
+            <div class="logo">
+                <span class="visually-hidden">Asher Olgeirson</span>
+                <pre aria-hidden="true">
+
+░█▀█░█▀▀░█░█░█▀▀░█▀▄░░░█▀█░█░░░█▀▀░█▀▀░▀█▀░█▀▄░█▀▀░█▀█░█▀█
+░█▀█░▀▀█░█▀█░█▀▀░█▀▄░░░█░█░█░░░█░█░█▀▀░░█░░█▀▄░▀▀█░█░█░█░█
+░▀░▀░▀▀▀░▀░▀░▀▀▀░▀░▀░░░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀░▀
+
+                </pre>
+            </div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#about" class="active">/home</a></li>
+                    <li><a href="#projects">/projects</a></li>
+                    <!-- <li><a href="#log">/log</a></li> -->
+                    <li><a href="#contact">/contact</a></li>
+                    <li><a href="resume.pdf">/resume</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="about" class="section">
+                <h1 class="section-title">>> whoami</h1>
+                <div class="terminal-block">
+                    <p> I'm Asher Olgeirson, a student studying Computer Engineering and Computer Science at Northeastern University</p>
+                    <p> I love writing software for race cars, robots, and regular devices. Currently looking for a co-op or internship in Spring or Summer of 2027</p>
+                </div>
+            </section>
+
+            <section id="projects" class="section">
+                <h2 class="section-title">>> Experience </h2>
+                
+                <div class="project-grid">
+                    <article class="project-card">
+                        <h3>Software Engineering Intern</h3>
+                        <p class="org">@ Comcast</p>
+                        <p class="dates"> 2023-2025 </p>
+                        <p class="meta">[Rust, Go, Java, PostgreSQL, Jira]</p>
+                        <p>I was an intern at Comcast for three summers, where I worked on three separate teams. 
+                                I worked on fiber optic monitoring, code generation for cybersecurity, and developer tooling for the DRM team
+                        </p>
+                        <!-- TODO: Make this expandable -->
+                        <a href="https://www.databee.ai/">Databee -></a>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>Firmware Member</h3>
+                        <p class="org">@ Northeastern Electric Racing</p>
+                        <p class="meta">[Rust, C, embassy-rs, ThreadX, CAN, I<sup>2</sup>C]</p>
+                        <p>Wrote drivers in C and Rust for IMUs, time of flight sensors, and created an alerting system for the car state</p>
+                        <a href="https://nuelectricracing.org/">The Team -></a>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>Powertrain Engineer</h3>
+                        <p class="org">@ University College Dublin Formula Student</p>
+                        <p class="meta">[C++, CAN]</p>
+                        <p>Wrote brake pedal plausibility sensor drivers, throttle pedal code, and compatibility layer for the motor driver </p>
+                        <a href="https://ucdfs.ie/">The Team -></a>
+                    </article>
+
+
+                    <article class="project-card">
+                        <h3>Software Captain</h3>
+
+                        <p class="org">@ FRC 2240 Brute Force</p>
+                        <p class="meta">[C++, WPILib, Computer Vision, Robotics]</p>
+                        <p>Wrote robot code in C++, and created a localization system to &#177; 2cm. Picked up a few skills in computer vision, motor control, and robotics</p>
+                        <a href="https://sites.google.com/view/dsst-robotics/home">The Team -></a>
+                    </article>
+
+
+                    <article class="project-card">
+                        <h3>Misc. Projects</h3>
+                        <p class="meta">[Python, SQL]</p>
+                        <p>Made a handful of tools for math (margin), health data (garfana), and a few short experiments</p>
+                        <a href="https://github.com/aolgeirson/margin">Margin -></a><br>
+                        <a href="https://github.com/aolgeirson/garf">Garfana -></a>
+                    </article>
+
+
+
+                </div>
+            </section>
+
+            <!-- <section id="log" class="section"> -->
+            <!--     <h2 class="section-title">>> engineering_log</h2> -->
+            <!--     <ul class="log-list"> -->
+            <!--         <li> -->
+            <!--             <span class="date">2023-10-15</span> -->
+            <!--             <a href="#">Debugging I2C timing issues on STM32</a> -->
+            <!--         </li> -->
+            <!--         <li> -->
+            <!--             <span class="date">2023-09-22</span> -->
+            <!--             <a href="#">Why I switched from VS Code to Neovim</a> -->
+            <!--         </li> -->
+            <!--         <li> -->
+            <!--             <span class="date">2023-08-10</span> -->
+            <!--             <a href="#">Notes on "Computer Systems: A Programmer's Perspective"</a> -->
+            <!--         </li> -->
+            <!--     </ul> -->
+            <!-- </section> -->
+        </main>
+
+        <footer class="site-footer">
+                <section id="contact">
+            <hr>
+            <p>
+                <a href="https://github.com/aolgeirson">github</a> //
+                [my first name] @ [my last name].[com]// 
+                <a href="https://www.linkedin.com/in/asher-olgeirson/">linkedin</a>
+            </p>
+            <p class="copyright">© <script>
+                document.write(new Date().getFullYear())
+            </script> Asher Olgeirson. EOF.</p>
+                    </section>
+        </footer>
+    </div>
+
+</body>
+</html>
