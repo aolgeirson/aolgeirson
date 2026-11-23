@@ -1,0 +1,16 @@
+/* Nord */
+:root {
+    --bg-color: #2e3440;
+    --fg-color: #eceff4;
+    --fg-dim: #d8dee9;
+
+    --accent-red: #bf616a;
+    --accent-green: #a3be8c;
+    --accent-yellow: #ebcb8b;
+    --accent-blue: #81a1c1;
+    --accent-purple: #b48ead;
+    --accent-aqua: #88c0d0;
+
+    --terminal-bg: #3b4252;
+    --border-color: #4c566a;
+}

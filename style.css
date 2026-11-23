@@ -5,20 +5,7 @@
 */
 
 :root {
-    /* Color Palette - Gruvbox Dark Inspired */
-    --bg-color: #282828;       /* Dark Grey Background */
-    --fg-color: #ebdbb2;       /* Cream Foreground */
-    --fg-dim: #a89984;         /* Dimmed Foreground */
-    
-    --accent-red: #cc241d;
-    --accent-green: #98971a;
-    --accent-yellow: #d79921;
-    --accent-blue: #458588;
-    --accent-purple: #b16286;
-    --accent-aqua: #689d6a;
-    
-    --terminal-bg: #1d2021;    /* Darker block background */
-    --border-color: #504945;
+    /* Colors are defined in themes/*.css */
     
     /* Typography */
     --font-mono: 'JetBrainsMono Nerd Font Mono', 'JetBrainsMono', 'JetBrains Mono', 'Courier New', Courier, 'Lucida Console', Monaco, monospace;
@@ -102,6 +89,28 @@ ul {
     }
 }
 
+/* Theme Selector */
+.theme-selector {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    font-size: 0.85rem;
+}
+
+.theme-selector select {
+    background-color: var(--terminal-bg);
+    color: var(--fg-color);
+    border: 1px solid var(--border-color);
+    font-family: var(--font-base);
+    font-size: inherit;
+    padding: 0 var(--spacing-sm);
+}
+
+.theme-selector select:hover,
+.theme-selector select:focus {
+    border-color: var(--accent-yellow);
+}
+
 /* Navigation */
 .nav-list {
     display: flex;
@@ -159,14 +168,87 @@ ul {
     position: relative;
 }
 
+
+
 .terminal-block::before {
-    content: "guest@web:~$ cat intro.txt";
+    content: "guest@web:~$ " attr(data-cmd);
     display: block;
     font-size: 0.8rem;
     color: var(--accent-aqua);
     margin-bottom: var(--spacing-md);
     border-bottom: 1px solid var(--border-color);
     padding-bottom: var(--spacing-sm);
+}
+
+/* ls -la listing (nest inside .terminal-block) */
+.ls {
+    display: grid;
+    grid-template-columns: auto auto auto 1fr;
+    column-gap: var(--spacing-md);
+    font-size: 0.9rem;
+    overflow-x: auto;
+}
+
+.ls > div {
+    display: contents;
+}
+
+.ls .perms {
+    color: var(--fg-dim);
+    white-space: nowrap;
+}
+
+.ls .size {
+    color: var(--accent-green);
+    text-align: right;
+    white-space: nowrap;
+}
+
+.ls .date {
+    color: var(--accent-purple);
+    white-space: nowrap;
+}
+
+.ls .dir {
+    color: var(--accent-blue);
+    font-weight: bold;
+}
+
+/* pacman -Ss listing (nest inside .terminal-block) */
+.pkg {
+    font-size: 0.9rem;
+}
+
+.pkg > div + div {
+    margin-top: var(--spacing-sm);
+}
+
+.pkg .repo {
+    color: var(--accent-purple);
+    font-weight: bold;
+}
+
+.pkg .repo::after {
+    content: "/";
+}
+
+.pkg .name {
+    color: var(--fg-color);
+    font-weight: bold;
+}
+
+.pkg .version {
+    color: var(--accent-green);
+    font-weight: bold;
+}
+
+.pkg .installed {
+    color: var(--accent-aqua);
+    font-weight: bold;
+}
+
+.pkg .desc {
+    padding-left: 4ch;
 }
 
 /* Project Grid */

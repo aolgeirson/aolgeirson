@@ -1,0 +1,16 @@
+/* Gruvbox Light */
+:root {
+    --bg-color: #fbf1c7;
+    --fg-color: #3c3836;
+    --fg-dim: #7c6f64;
+
+    --accent-red: #9d0006;
+    --accent-green: #79740e;
+    --accent-yellow: #b57614;
+    --accent-blue: #076678;
+    --accent-purple: #8f3f71;
+    --accent-aqua: #427b58;
+
+    --terminal-bg: #f2e5bc;
+    --border-color: #d5c4a1;
+}

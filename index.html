@@ -7,10 +7,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;display=swap">
+    <link rel="stylesheet" href="themes/tokyo-night.css" id="theme">
+    <script>
+        try {
+            const saved = localStorage.getItem('theme');
+            if (saved) document.getElementById('theme').href = 'themes/' + saved + '.css';
+        } catch (e) {}
+    </script>
     <link rel="stylesheet" href="style.css">
     <meta name="description" content="~aolgeirson">
 </head>
 <body>
+
+    <div class="theme-selector">
+        <label for="theme-select">theme:</label>
+        <select id="theme-select">
+            <option value="tokyo-night">tokyo-night</option>
+            <option value="gruvbox-dark">gruvbox-dark</option>
+            <option value="gruvbox-light">gruvbox-light</option>
+            <option value="nord">nord</option>
+        </select>
+    </div>
 
     <div class="container">
         <header class="site-header">
@@ -25,12 +42,14 @@
                 </pre>
             </div>
             <nav>
-                <ul class="nav-list">
-                    <li><a href="#about" class="active">/home</a></li>
-                    <li><a href="#projects">/projects</a></li>
+                     <ul class="nav-list">
+                    <li><a href="index.html#about" class="active">/home</a></li>
+                    <li><a href="index.html#projects">/projects</a></li>
                     <!-- <li><a href="#log">/log</a></li> -->
-                    <li><a href="#contact">/contact</a></li>
+                    <li><a href="index.html#contact">/contact</a></li>
                     <li><a href="resume.pdf">/resume</a></li>
+                    <!-- <li><a href="personal.html#photo" >/personal</a></li> -->
+                    <!-- <li><a href="personal.html#recs">/recs</a></li> -->
                 </ul>
             </nav>
         </header>
@@ -38,9 +57,9 @@
         <main>
             <section id="about" class="section">
                 <h1 class="section-title">>> whoami</h1>
-                <div class="terminal-block">
+                <div class="terminal-block" data-cmd="cat intro.txt">
                     <p> I'm Asher Olgeirson, a student studying Computer Engineering and Computer Science at Northeastern University</p>
-                    <p> I love writing software for race cars, robots, and regular devices. Currently looking for a co-op or internship in Spring or Summer of 2027</p>
+                    <p> I love writing software for race cars, robots, and regular devices.</p>
                 </div>
             </section>
 
@@ -61,7 +80,7 @@
                     </article>
 
                     <article class="project-card">
-                        <h3>Firmware Member</h3>
+                        <h3>Firmware Lead</h3>
                         <p class="org">@ Northeastern Electric Racing</p>
                         <p class="meta">[Rust, C, embassy-rs, ThreadX, CAN, I<sup>2</sup>C]</p>
                         <p>Wrote drivers in C and Rust for IMUs, time of flight sensors, and created an alerting system for the car state</p>
@@ -97,8 +116,6 @@
 
 
 
-                </div>
-            </section>
 
             <!-- <section id="log" class="section"> -->
             <!--     <h2 class="section-title">>> engineering_log</h2> -->
@@ -124,15 +141,25 @@
             <hr>
             <p>
                 <a href="https://github.com/aolgeirson">github</a> //
-                [my first name] @ [my last name].[com]// 
+                <a href="mailto:web@olgeirson.com">web@olgeirson.com</a> // 
                 <a href="https://www.linkedin.com/in/asher-olgeirson/">linkedin</a>
             </p>
             <p class="copyright">© <script>
                 document.write(new Date().getFullYear())
-            </script> Asher Olgeirson. EOF.</p>
+            </script> Asher Olgeirson. :wq</p>
                     </section>
         </footer>
     </div>
+
+    <script>
+        const themeLink = document.getElementById('theme');
+        const themeSelect = document.getElementById('theme-select');
+        themeSelect.value = themeLink.getAttribute('href').replace(/^themes\/|\.css$/g, '');
+        themeSelect.addEventListener('change', () => {
+            themeLink.href = 'themes/' + themeSelect.value + '.css';
+            try { localStorage.setItem('theme', themeSelect.value); } catch (e) {}
+        });
+    </script>
 
 </body>
 </html>

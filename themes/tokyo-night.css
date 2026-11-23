@@ -1,0 +1,16 @@
+/* Tokyo Night */
+:root {
+    --bg-color: #1a1b26;
+    --fg-color: #c0caf5;
+    --fg-dim: #a9b1d6;
+
+    --accent-red: #f7768e;
+    --accent-green: #9ece6a;
+    --accent-yellow: #e0af68;
+    --accent-blue: #7aa2f7;
+    --accent-purple: #bb9af7;
+    --accent-aqua: #7dcfff;
+
+    --terminal-bg: #16161e;
+    --border-color: #414868;
+}
